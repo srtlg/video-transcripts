@@ -9,7 +9,7 @@ youtube, but until recently it still worked without.
 
 xsltproc is part of libxslt and was available on most Linux distros I’ve used so far
 
-# A video that has only automatic transcripts
+## A video that has only automatic transcripts
 
 A German video with auto transcript
 
@@ -27,14 +27,14 @@ ttml is actually a quite nice format
 
 ```
 yt-dlp --skip-download 'https://www.youtube.com/watch?v=$VIDEO_ID' --write-auto-subs --sub-format ttml --sub-langs de-orig -o out
-\[youtube\] VIDEO_ID   : Downloading visionos player API JSON
-\[youtube\] VIDEO_ID   : Downloading m3u8 information
-\[info\] VIDEO_ID   : Downloading subtitles: de-orig
-\[info\] VIDEO_ID   : Downloading 1 format(s): 616+251
-\[info\] Writing video subtitles to: out.de-orig.ttml
-WARNING: The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp\#impersonation  for information on installing the required dependencies
-\[download\] Destination: out.de-orig.ttml
-\[download\] 100% of  387.00KiB in 00:00:00 at 1.53MiB/s
+[youtube] VIDEO_ID   : Downloading visionos player API JSON
+[youtube] VIDEO_ID   : Downloading m3u8 information
+[info] VIDEO_ID   : Downloading subtitles: de-orig
+[info] VIDEO_ID   : Downloading 1 format(s): 616+251
+[info] Writing video subtitles to: out.de-orig.ttml
+WARNING: The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies
+[download] Destination: out.de-orig.ttml
+[download] 100% of  387.00KiB in 00:00:00 at 1.53MiB/s
 ```
 
 ```
