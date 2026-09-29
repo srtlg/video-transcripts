@@ -14,19 +14,21 @@
     <xsl:variable name="VideoURL" 
      select="concat('https://www.youtube-nocookie.com/embed/', $VideoID, '?enablejsapi=1&amp;origin=http%3A%2F%2Flocalhost%3A8000')"/>
 
-    <html>
+    <html style='height: 100%'>
       <meta charset="UTF-8"/>
-      <body>
+      <body style='height: 100%; display: flex; flex-direction: column;'>
 <iframe
   name="youtube-player"
   width="640"
   height="360"
+  style='flex-shrink: 0;'
   src="{concat($VideoURL, '&amp;start=0')}"
   title="YouTube video player"
   allow="autoplay; encrypted-media"
   referrerpolicy="strict-origin-when-cross-origin"
   allowfullscreen="allowfullscreen">
 </iframe>
+<div style='flex: 1; overflow-y: auto; padding: 16px; box-sizing: border-box;'>
         <xsl:for-each select="/t:tt/t:body/t:div/t:p">
           <xsl:variable name="BeginSeconds"
             select="
@@ -40,7 +42,6 @@
               + number(substring(@end, 4, 2)) * 60
               + number(substring(@end, 7))
             "/>
-
           <xsl:variable name="URL" 
 			select="concat($VideoURL,
 				'&amp;autoplay=1&amp;start=', floor($BeginSeconds),
@@ -52,6 +53,7 @@
             </a>
           </p>
         </xsl:for-each>
+</div>
       </body>
     </html>
   </xsl:template>
