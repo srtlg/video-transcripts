@@ -43,8 +43,8 @@
 
           <xsl:variable name="URL" 
 			select="concat($VideoURL,
-				'&amp;autoplay=1&amp;start=', round($BeginSeconds),
-				'&amp;end=', round($EndSeconds))"/>
+				'&amp;autoplay=1&amp;start=', floor($BeginSeconds),
+				'&amp;end=', ceiling($EndSeconds))"/>
 
           <p>
             <a target="youtube-player" href="{$URL}">
